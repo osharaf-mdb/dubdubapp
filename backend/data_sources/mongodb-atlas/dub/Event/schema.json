@@ -1,0 +1,49 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "createdBy": {
+            "bsonType": "string"
+        },
+        "description": {
+            "bsonType": "string"
+        },
+        "eventType": {
+            "bsonType": "string"
+        },
+        "interests": {
+            "bsonType": "string"
+        },
+        "location": {
+            "bsonType": "string"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "school": {
+            "bsonType": "string"
+        },
+        "students": {
+            "bsonType": "string"
+        },
+        "time": {
+            "bsonType": "string"
+        },
+        "wwTrack": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "name",
+        "time",
+        "location",
+        "description",
+        "createdBy",
+        "students",
+        "eventType"
+    ],
+    "title": "Event"
+}

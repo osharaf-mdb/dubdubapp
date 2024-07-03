@@ -1,0 +1,42 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "string"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "role": {
+            "bsonType": "string"
+        },
+        "school": {
+            "bsonType": "string"
+        },
+        "paGroup": {
+            "bsonType": "string"
+        },
+        "wwTrack": {
+            "bsonType": "string"
+        },
+        "interests": {
+            "bsonType": "string"
+        },
+        "events": {
+            "bsonType": "string"
+        },
+        "students": {
+            "bsonType": "string"
+        },
+        "time": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "name",
+        "role",
+        "events"
+    ],
+    "title": "Event"
+}

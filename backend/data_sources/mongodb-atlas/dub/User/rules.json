@@ -1,0 +1,19 @@
+{
+    "database": "dub",
+    "collection": "User",
+    "roles": [
+        {
+            "name": "write-own-items",
+            "apply_when": {},
+            "document_filters": {
+                "read": true,
+                "write": true
+            },
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "read": true,
+            "write": true
+        }
+    ]
+}
