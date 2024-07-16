@@ -1,27 +1,27 @@
-import Realm, {BSON} from 'realm';
+import Realm from 'realm';
 
-export class User extends Realm.Object<User> {
+export class Wildcat extends Realm.Object {
   _id!: string;
   name!: string;
   role!: string;
   school?: string;
   paGroup?: string;
   wwTrack?: string;
-  interests?: string;
-  events?: Array<Event>
+  interests?: [];  // Changed to array of strings
+  events?: [];     // Changed to array of strings
 
   static schema: Realm.ObjectSchema = {
-    name: 'User',
+    name: 'Wildcat',
     primaryKey: '_id',
     properties: {
-        _id: 'string',
-        name: 'string',
-        role: 'string',
-        school: 'string',
-        paGroup: 'string',
-        wwTrack: 'string',
-        interests: 'string',
-        events: 'Array<Event>'
+      _id: { type: 'string', indexed: true },
+      name: { type: 'string', optional: false },
+      role: { type: 'string', optional: false },
+      school: { type: 'string', optional: true },
+      paGroup: { type: 'string', optional: true },
+      wwTrack: { type: 'string', optional: true },
+      interests: { type: 'list', objectType: 'mixed', optional: true},  // Schema for array of strings
+      events: { type: 'list', objectType: 'mixed', optional: true},     // Schema for array of strings
     },
   };
 }

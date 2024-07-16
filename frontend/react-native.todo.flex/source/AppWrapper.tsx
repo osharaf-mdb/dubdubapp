@@ -6,8 +6,8 @@ import {appId, baseUrl} from '../atlasConfig.json';
 import {App} from './App';
 import {WelcomeView} from './WelcomeView';
 
-import {Item} from './ItemSchema';
 import {Event} from './EventSchema';
+import {Wildcat} from './UserSchema';
 
 const LoadingIndicator = () => {
   return (
@@ -22,13 +22,19 @@ export const AppWrapper = () => {
     <AppProvider id={appId} baseUrl={baseUrl}>
       <UserProvider fallback={WelcomeView}>
         <RealmProvider
-          schema={[Item, Event]}
+          schema={[Event, Wildcat]}
           sync={{
             flexible: true,
             onError: (_session, error) => {
               // Show sync errors in the console
               console.error(error);
             },
+          initialSubscriptions: {
+            update(subs, realm) {
+              subs.add(realm.objects('Wildcat')),
+              subs.add(realm.objects('Event'))
+            },
+          }
           }}
           fallback={LoadingIndicator}>
           <App />
